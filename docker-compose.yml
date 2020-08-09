@@ -12,5 +12,3 @@ services:
       - "9090:8080"
     devices:
       - /dev/gpiomem
-    volumes: 
-      - /sys/class/gpio:/sys/class/gpio
