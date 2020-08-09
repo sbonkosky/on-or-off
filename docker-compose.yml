@@ -1,0 +1,16 @@
+version: '3.4'
+
+services:
+  on-or-off:
+    container_name: one-or-off
+    image: ${DOCKER_REGISTRY-}on-or-off
+    privileged: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "9090:8080"
+    devices:
+      - /dev/gpiomem
+    volumes: 
+      - /sys/class/gpio:/sys/class/gpio
